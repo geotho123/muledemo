@@ -1,4 +1,4 @@
-package com.roy.springdatademo;
+package com.roy.muledemo;
 
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;

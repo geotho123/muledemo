@@ -1,4 +1,4 @@
-package com.roy.springdatademo.json;
+package com.roy.muledemo.json;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;

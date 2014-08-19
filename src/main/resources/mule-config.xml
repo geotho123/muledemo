@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:http="http://www.mulesoft.org/schema/mule/http"
-	xmlns:vm="http://www.mulesoft.org/schema/mule/vm"
+	xmlns:vm="http://www.mulesoft.org/schema/mule/vm" xmlns:spring="http://www.springframework.org/schema/beans"
+	xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf"
 	xsi:schemaLocation="
-        http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
-        http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
-        http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/current/mule-vm.xsd">
-
-	<model name="BasicCxfTest">
-		<service name="echoService">
-			<inbound>
-				<http:inbound-endpoint address="http://localhost:8080/services/person"
-					exchange-pattern="request-response" name="httpInbound">
-					<cxf:simple-service/>
-				</http:inbound-endpoint>
-			</inbound>
-			<component class=com.roy.springdatademo.person.service.impl.PersonServiceImpl" />
-		</service>
-
-	</model>
+        http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.5/mule.xsd
+        http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/3.5/mule-http.xsd
+        http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/3.5/mule-vm.xsd
+        http://www.mulesoft.org/schema/mule/cxf http://www.mulesoft.org/schema/mule/cxf/3.5/mule-cxf.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+	<spring:beans>
+	    <spring:import resource="classpath:spring/service-config.xml"/>
+	</spring:beans>
+	
+	<flow name="personService">
+	    <http:inbound-endpoint address="http://localhost:8080/muledemo/personService" exchange-pattern="request-response">
+	        <cxf:jaxws-service serviceClass="com.roy.muledemo.person.service.PersonService"/>
+	    </http:inbound-endpoint>
+	    <component>
+			<spring-object bean="personService"/>
+		</component>
+	  </flow>
 </mule>

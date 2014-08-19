@@ -1,4 +1,4 @@
-package com.roy.springdatademo.person.service;
+package com.roy.muledemo.person.service;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import junit.framework.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.roy.springdatademo.BaseTestCase;
-import com.roy.springdatademo.person.Person;
+import com.roy.muledemo.BaseTestCase;
+import com.roy.muledemo.person.Person;
 
 public class TestPersonService extends BaseTestCase {
 	

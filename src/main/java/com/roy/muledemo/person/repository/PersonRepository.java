@@ -1,4 +1,4 @@
-package com.roy.springdatademo.person.repository;
+package com.roy.muledemo.person.repository;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.roy.springdatademo.person.Person;
+import com.roy.muledemo.person.Person;
 
 public interface PersonRepository extends JpaRepository<Person, Long> {
 	public List<Person> findByName(String name);

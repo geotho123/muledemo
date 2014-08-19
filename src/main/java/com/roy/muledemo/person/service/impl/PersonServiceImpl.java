@@ -1,18 +1,20 @@
-package com.roy.springdatademo.person.service.impl;
+package com.roy.muledemo.person.service.impl;
 
-import java.io.Serializable;
 import java.util.List;
+
+import javax.jws.WebService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.roy.springdatademo.person.Person;
-import com.roy.springdatademo.person.repository.PersonRepository;
-import com.roy.springdatademo.person.service.PersonService;
+import com.roy.muledemo.person.Person;
+import com.roy.muledemo.person.repository.PersonRepository;
+import com.roy.muledemo.person.service.PersonService;
 
 @Service("personService")
+@WebService(endpointInterface = "com.roy.muledemo.person.service.PersonService", serviceName = "personService")
 public class PersonServiceImpl implements PersonService {
 	private final static Logger log = LoggerFactory.getLogger(PersonServiceImpl.class);
 	

@@ -1,4 +1,4 @@
-package com.roy.springdatademo.person;
+package com.roy.muledemo.person;
 
 import java.io.Serializable;
 
@@ -12,7 +12,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Table(name="person")
-@XmlRootElement
+//@XmlRootElement
 public class Person implements Serializable {
 	
 	private static final long serialVersionUID = 1L;

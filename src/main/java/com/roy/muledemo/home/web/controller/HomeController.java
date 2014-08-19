@@ -1,4 +1,4 @@
-package com.roy.springdatademo.home.web.controller;
+package com.roy.muledemo.home.web.controller;
 
 import java.util.List;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.roy.springdatademo.person.Person;
-import com.roy.springdatademo.person.service.PersonService;
+import com.roy.muledemo.person.Person;
+import com.roy.muledemo.person.service.PersonService;
 
 @RestController
 public class HomeController {

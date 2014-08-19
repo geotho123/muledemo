@@ -12,7 +12,7 @@
        http://drools.org/schema/kie-spring http://drools.org/schema/kie-spring.xsd
        http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd"
        >
-	<context:component-scan base-package="com.roy.springdatademo" />
+	<context:component-scan base-package="com.roy.muledemo" />
 	
 	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
@@ -44,7 +44,7 @@
 		<property name="jpaVendorAdapter" ref="jpaVendorAdapter"/>
 		<property name="packagesToScan">
 			<list>
-				<value>com.roy.springdatademo</value>
+				<value>com.roy.muledemo</value>
 			</list>
 		</property>
 		<property name="jpaProperties">
@@ -71,7 +71,7 @@
    		<property name="nestedTransactionAllowed" value="true"/>
     </bean>
     
-    <jpa:repositories base-package="com.roy.springdatademo.*.*repository"/>
+    <jpa:repositories base-package="com.roy.muledemo.*.*repository"/>
     
     <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
 	

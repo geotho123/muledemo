@@ -16,7 +16,7 @@
 		<message-converters>
 		    <beans:bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
 		        <beans:property name="objectMapper">
-		            <beans:bean class="com.roy.springdatademo.json.HibernateAwareObjectMapper" >
+		            <beans:bean class="com.roy.muledemo.json.HibernateAwareObjectMapper" >
 			            <beans:property name="dateFormat">
 			                <beans:bean class="java.text.SimpleDateFormat">
 			                    <beans:constructor-arg type="java.lang.String" value="yyyy-MM-dd"></beans:constructor-arg>
@@ -30,7 +30,7 @@
 
 	<beans:bean id="conversion-service" class="org.springframework.format.support.FormattingConversionServiceFactoryBean" />
 
-	<context:component-scan base-package="com.roy.springdatademo">
+	<context:component-scan base-package="com.roy.muledemo">
 		<context:include-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>

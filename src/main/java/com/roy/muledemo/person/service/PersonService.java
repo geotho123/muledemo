@@ -1,4 +1,4 @@
-package com.roy.springdatademo.person.service;
+package com.roy.muledemo.person.service;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
 
-import com.roy.springdatademo.person.Person;
+import com.roy.muledemo.person.Person;
 
 @WebService
 public interface PersonService {
