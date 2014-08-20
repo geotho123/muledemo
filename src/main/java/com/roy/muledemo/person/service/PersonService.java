@@ -15,7 +15,7 @@ public interface PersonService {
 	
 	public List<Person> findAll();
 	
-	@WebResult(name="person") 
+	@WebResult(name="view")
 	public Person getOne(@WebParam(name="personId") Long id);
 	
 	public Person delete(Long id);

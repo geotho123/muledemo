@@ -18,7 +18,7 @@
 	<listener>
        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
-    <listener>  
+    <listener>
     	<listener-class>org.mule.config.builders.MuleXmlBuilderContextListener</listener-class>
     </listener>
 
@@ -57,7 +57,18 @@
         <filter-name>HiddenHttpMethodFilter</filter-name>
         <servlet-name>spring</servlet-name>
     </filter-mapping>
-    
+     
+    <servlet>
+        <servlet-name>muleServlet</servlet-name>
+        <servlet-class>org.mule.transport.servlet.MuleReceiverServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>muleServlet</servlet-name>
+        <url-pattern>/services/*</url-pattern>
+    </servlet-mapping>
+	
     <servlet>
         <servlet-name>mvc</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -65,10 +76,10 @@
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath:/spring/web-config.xml</param-value>
         </init-param>
-        <load-on-startup>1</load-on-startup>
+        <load-on-startup>2</load-on-startup>
         <async-supported>true</async-supported>
     </servlet>
- 
+ 	
     <servlet-mapping>
         <servlet-name>mvc</servlet-name>
         <url-pattern>/</url-pattern>

@@ -14,7 +14,7 @@ import com.roy.muledemo.person.repository.PersonRepository;
 import com.roy.muledemo.person.service.PersonService;
 
 @Service("personService")
-@WebService(endpointInterface = "com.roy.muledemo.person.service.PersonService", serviceName = "personService")
+@WebService(endpointInterface = "com.roy.muledemo.person.service.PersonService", serviceName = "person")
 public class PersonServiceImpl implements PersonService {
 	private final static Logger log = LoggerFactory.getLogger(PersonServiceImpl.class);
 	

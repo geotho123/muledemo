@@ -2,21 +2,21 @@
 <mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:http="http://www.mulesoft.org/schema/mule/http"
 	xmlns:vm="http://www.mulesoft.org/schema/mule/vm" xmlns:spring="http://www.springframework.org/schema/beans"
-	xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf"
+	xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf" xmlns:servlet="http://www.mulesoft.org/schema/mule/servlet"
 	xsi:schemaLocation="
         http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.5/mule.xsd
         http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/3.5/mule-http.xsd
         http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/3.5/mule-vm.xsd
         http://www.mulesoft.org/schema/mule/cxf http://www.mulesoft.org/schema/mule/cxf/3.5/mule-cxf.xsd
+        http://www.mulesoft.org/schema/mule/servlet http://www.mulesoft.org/schema/mule/servlet/3.5/mule-servlet.xsd
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 	<spring:beans>
 	    <spring:import resource="classpath:spring/service-config.xml"/>
 	</spring:beans>
 	
-	<flow name="personService">
-	    <http:inbound-endpoint address="http://localhost:8080/muledemo/personService" exchange-pattern="request-response">
-	        <cxf:jaxws-service serviceClass="com.roy.muledemo.person.service.PersonService"/>
-	    </http:inbound-endpoint>
+	<flow name="person">
+    	<http:inbound-endpoint host="localhost" port="8081" path="person" exchange-pattern="request-response"/>
+        <cxf:jaxws-service serviceClass="com.roy.muledemo.person.service.PersonService" />
 	    <component>
 			<spring-object bean="personService"/>
 		</component>
