@@ -8,15 +8,13 @@ import javax.jws.WebService;
 
 import com.roy.muledemo.person.Person;
 
-@WebService
 public interface PersonService {
 	
 	public void save(Person person);
 	
 	public List<Person> findAll();
 	
-	@WebResult(name="view")
-	public Person getOne(@WebParam(name="personId") Long id);
+	public Person getOne(Long id);
 	
 	public Person delete(Long id);
 	

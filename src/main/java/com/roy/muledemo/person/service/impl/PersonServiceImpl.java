@@ -12,10 +12,11 @@ import org.springframework.stereotype.Service;
 import com.roy.muledemo.person.Person;
 import com.roy.muledemo.person.repository.PersonRepository;
 import com.roy.muledemo.person.service.PersonService;
+import com.roy.muledemo.person.service.PersonServiceWS;
 
 @Service("personService")
-@WebService(endpointInterface = "com.roy.muledemo.person.service.PersonService", serviceName = "person")
-public class PersonServiceImpl implements PersonService {
+@WebService(endpointInterface = "com.roy.muledemo.person.service.PersonServiceWS", serviceName = "person")
+public class PersonServiceImpl implements PersonService,PersonServiceWS {
 	private final static Logger log = LoggerFactory.getLogger(PersonServiceImpl.class);
 	
 	@Autowired
@@ -56,6 +57,12 @@ public class PersonServiceImpl implements PersonService {
 	@Override
 	public List<Person> searchByName(String name) {
 		return personRepository.searchByName(name);
+	}
+
+	@Override
+	public String getName() {
+		System.out.println("--call webservice--");
+		return this.findAll().get(0).getName();
 	}
 	
 	
