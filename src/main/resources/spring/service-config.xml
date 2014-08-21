@@ -77,7 +77,8 @@
     <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
 	
 	<aop:aspectj-autoproxy expose-proxy="true" />
-	
+	<!-- Camel begin -->
+	<!-- 
 	<import resource="classpath:META-INF/cxf/cxf.xml" />
     
     <cxf:cxfEndpoint id="personEndpoint" address="http://localhost:8090/person" serviceClass="com.roy.muledemo.person.service.PersonServiceWS"/>
@@ -88,5 +89,6 @@
 	    <camel:to uri="bean:personService?method=getName"/>
 	  </camel:route> 
 	</camel:camelContext>
-    
+    -->
+    <!-- Camel end -->
 </beans>

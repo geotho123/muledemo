@@ -8,11 +8,13 @@
   
   <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<spring.version>4.0.6.RELEASE</spring.version>
+		<spring.version>3.2.10.RELEASE</spring.version>
 		<hibernate.version>4.3.1.Final</hibernate.version>
 		<mule.version>3.5.0</mule.version>
-		<camel.version>2.13.2</camel.version>
-		<cxf.version>2.7.12</cxf.version>
+		<!-- Camel begin -->
+		<!-- <camel.version>2.13.2</camel.version>
+		<cxf.version>2.7.12</cxf.version>  -->
+		<!-- Camel end -->
   </properties>
   
   <build>
@@ -248,6 +250,8 @@
             <scope>test</scope>
             <version>${mule.version}</version>
         </dependency>
+        <!-- Camel begin -->
+        <!-- 
         <dependency>
 			<groupId>org.apache.camel</groupId>
 			<artifactId>camel-core</artifactId>
@@ -283,7 +287,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-core</artifactId>
+			<artifactId>cxf-core</artifactId>
 			<version>${cxf.version}</version>
 		</dependency>
 		<dependency>
@@ -306,6 +310,7 @@
 			<artifactId>cxf-rt-frontend-jaxrs</artifactId>
 			<version>${cxf.version}</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-bundle</artifactId>
@@ -356,7 +361,8 @@
 					<groupId>commons-lang</groupId>
 				</exclusion>
 			</exclusions>
-		</dependency>
+		</dependency> -->
+		<!-- Camel end -->
 	</dependencies>
 	<repositories>     
 	  <repository>     

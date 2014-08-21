@@ -13,12 +13,12 @@
 	<spring:beans>
 	    <spring:import resource="classpath:spring/service-config.xml"/>
 	</spring:beans>
-	<!-- 
+	
 	<flow name="person">
-    	<http:inbound-endpoint host="localhost" port="8081" path="person" exchange-pattern="request-response"/>
-        <cxf:jaxws-service serviceClass="com.roy.muledemo.person.service.PersonService" />
+	   	<http:inbound-endpoint address="http://localhost:8090/services/personService" exchange-pattern="request-response"/>
+	       <cxf:jaxws-service serviceClass="com.roy.muledemo.person.service.PersonServiceWS" />
 	    <component>
 			<spring-object bean="personService"/>
 		</component>
-	  </flow> -->
+	  </flow>
 </mule>

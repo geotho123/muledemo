@@ -15,13 +15,14 @@
        <param-name>org.mule.config</param-name>  
        <param-value>mule-config.xml</param-value>
     </context-param>
+    
 	<listener>
        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
-    <!-- 
+    
     <listener>
     	<listener-class>org.mule.config.builders.MuleXmlBuilderContextListener</listener-class>
-    </listener> -->
+    </listener>
 
     <filter>
 		<filter-name>CharacterEncodingFilter</filter-name>
