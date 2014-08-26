@@ -12,8 +12,8 @@
 		<hibernate.version>4.3.1.Final</hibernate.version>
 		<mule.version>3.5.0</mule.version>
 		<!-- Camel begin -->
-		<!-- <camel.version>2.13.2</camel.version>
-		<cxf.version>2.7.12</cxf.version>  -->
+		<camel.version>2.13.2</camel.version>
+		<cxf.version>2.7.12</cxf.version>
 		<!-- Camel end -->
   </properties>
   
@@ -204,6 +204,7 @@
 			<scope>provided</scope>
 			<version>2.0</version>
 		</dependency>
+		<!-- 
 		<dependency>
             <groupId>org.mule</groupId>
             <artifactId>mule-core</artifactId>
@@ -249,9 +250,9 @@
             <artifactId>mule-module-client</artifactId>
             <scope>test</scope>
             <version>${mule.version}</version>
-        </dependency>
+        </dependency> -->
         <!-- Camel begin -->
-        <!-- 
+        
         <dependency>
 			<groupId>org.apache.camel</groupId>
 			<artifactId>camel-core</artifactId>
@@ -287,7 +288,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-core</artifactId>
+			<artifactId>cxf-rt-core</artifactId>
 			<version>${cxf.version}</version>
 		</dependency>
 		<dependency>
@@ -361,7 +362,7 @@
 					<groupId>commons-lang</groupId>
 				</exclusion>
 			</exclusions>
-		</dependency> -->
+		</dependency>
 		<!-- Camel end -->
 	</dependencies>
 	<repositories>     

@@ -15,7 +15,6 @@ import com.roy.muledemo.person.service.PersonService;
 import com.roy.muledemo.person.service.PersonServiceWS;
 
 @Service("personService")
-@WebService(endpointInterface = "com.roy.muledemo.person.service.PersonServiceWS", serviceName = "personService")
 public class PersonServiceImpl implements PersonService,PersonServiceWS {
 	private final static Logger log = LoggerFactory.getLogger(PersonServiceImpl.class);
 	
@@ -60,9 +59,13 @@ public class PersonServiceImpl implements PersonService,PersonServiceWS {
 	}
 
 	@Override
-	public String getName() {
+	public String getName(Long id) {
 		System.out.println("--call webservice--");
-		return this.findAll().get(0).getName();
+		Person p = this.getOne(id);
+		if(p!=null) {
+			return p.getName();
+		}
+		return null;
 	}
 	
 	

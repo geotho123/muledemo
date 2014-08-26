@@ -78,10 +78,10 @@
 	
 	<aop:aspectj-autoproxy expose-proxy="true" />
 	<!-- Camel begin -->
-	<!-- 
+	
 	<import resource="classpath:META-INF/cxf/cxf.xml" />
     
-    <cxf:cxfEndpoint id="personEndpoint" address="http://localhost:8090/person" serviceClass="com.roy.muledemo.person.service.PersonServiceWS"/>
+    <cxf:cxfEndpoint id="personEndpoint" address="http://localhost:8090/personService" serviceClass="com.roy.muledemo.person.service.PersonServiceWS"/>
 	
 	<camel:camelContext xmlns="http://camel.apache.org/schema/spring">
 	  <camel:route>
@@ -89,6 +89,6 @@
 	    <camel:to uri="bean:personService?method=getName"/>
 	  </camel:route> 
 	</camel:camelContext>
-    -->
+    
     <!-- Camel end -->
 </beans>

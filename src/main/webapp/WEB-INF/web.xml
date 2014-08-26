@@ -11,19 +11,20 @@
            classpath:/spring/service-config.xml
        </param-value>
     </context-param>
+    <!-- 
     <context-param>
        <param-name>org.mule.config</param-name>  
        <param-value>mule-config.xml</param-value>
     </context-param>
-    
+     -->
 	<listener>
        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
-    
+    <!-- 
     <listener>
     	<listener-class>org.mule.config.builders.MuleXmlBuilderContextListener</listener-class>
     </listener>
-
+	-->
     <filter>
 		<filter-name>CharacterEncodingFilter</filter-name>
 		<display-name>Character Encoding Filter</display-name>
